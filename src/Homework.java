@@ -21,6 +21,7 @@ public class Homework {
         int winning_iteration = 1;
         double winning_value = 0;
 
+
         for (int i = 1; i <= quantity; i++) {
             System.out.println("Pizza number " + i);
             System.out.println("Enter the size of the pizza (diameter): ");
@@ -55,30 +56,33 @@ public class Homework {
 
     public void task3() {
         Random random = new Random();
+        int n = 3;
+        for (int i = 0; i < n; i++) {
+            Integer number1 = random.nextInt(10);
+            System.out.println("Enter first number " + number1);
+            Integer number2 = random.nextInt(10);
+            System.out.println("Enter second number " + number2);
 
-        Integer number1 = random.nextInt(10);
-        System.out.println("Enter first number " + number1);
-        Integer number2 = random.nextInt(10);
-        System.out.println("Enter second number " + number2);
 
+            Fraction fraction = new Fraction(number1, number2);
+            fraction.value();
+            System.out.println("Double value : " + fraction.value() + "[" + number1 + "/" + number2 + "]");
 
-        Fraction ulamek = new Fraction(number1, number2);
-        ulamek.value();
-        System.out.println("Double value : " + ulamek.value() + "[" + number1 + "/" + number2 + "]");
-
+        }
     }
+
 
 
     public void task4() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("How many first names: ");
+        System.out.println("How many names: ");
         Integer count = scanner.nextInt();
         String[] strArray = new String[count];
 
         for (int i = 0; i < count; i++) {
-            System.out.println("Podaj imię " + i);
+            System.out.println("Enter name " + i);
             Scanner scanner1 = new Scanner(System.in);
-            strArray[i] = scanner1.nextLine();
+            strArray[i] = scanner1.nextLine().trim();
 
         }
 
